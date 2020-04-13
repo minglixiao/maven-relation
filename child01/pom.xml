@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+    <!--子项目继承父项目。继承父项目的依赖-->
+  <parent>
+    <groupId>com.jd.shop</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../parent/pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.jd.shop</groupId>
+  <artifactId>child01</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>child01</name>
+  <url>http://www.example.com</url>
+
+
+  <dependencies>
+    <!-- scope为test的依赖不会被传递 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <!--父项目对子项目版本控制，子项目无需指定依赖的版本-->
+    <!-- 配置optional为true的依赖不会被传递。 -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <!-- java发送邮件 -->
+    <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>mail</artifactId>
+      <version>1.4.7</version>
+    </dependency>
+    <!-- 依赖传递的原则 -->
+  </dependencies>
+</project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.jd.shop</groupId>
+  <artifactId>parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <!-- pom是父项目专有的打包方式-->
+  <packaging>pom</packaging>
+
+  <!-- 聚合子项目，指定子项目的根目录-->
+  <modules>
+    <module>../child01</module>
+    <module>../child02</module>
+    <module>../child03</module>
+  </modules>
+
+  <name>parent</name>
+  <url>http://www.example.com</url>
+
+  <!-- 项目之间继承关系实现之后，子项目会继承父项目的依赖 -->
+  <dependencies>
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.68</version>
+    </dependency>
+  </dependencies>
+
+  <!-- dependencyManagement表示父项目只进行依赖版本控制，依赖默认不会被子项目继承 -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.2</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
