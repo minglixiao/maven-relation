@@ -23,7 +23,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
     <!--父项目对子项目版本控制，如果子项目指定依赖的版本，优先级高于父项目，采用此处指定的版本-->
